@@ -1,0 +1,2 @@
+#pragma once
+inline constexpr char highlightSource[] = R"SG_SHADER(@HIGHLIGHT_SOURCE@)SG_SHADER";

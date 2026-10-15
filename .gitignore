@@ -1,0 +1,30 @@
+# Research documentation is stored separately from the source repository.
+/[dD][oO][cC][sS]/
+*.[mM][dD]
+!/README.md
+!/README.zh-CN.md
+
+# Keep the license notice required by the bundled third-party data.
+!/sunglasses/data/APPLE_VIDEO_FLASHING_REDUCTION_NOTICE.md
+
+# Excluded local material, regardless of filename casing or location.
+*[tT][rR][aA][sS][hH]*
+
+# Python environments and generated files.
+__pycache__/
+*.py[cod]
+*.egg-info/
+/.venv/
+/.ruff_cache/
+/.pytest_cache/
+/.mypy_cache/
+/.coverage
+/htmlcov/
+
+# Native build outputs and local configuration.
+/build/
+/dist/
+/CMakeUserPresets.json
+/.vs/
+/.vscode/
+/.idea/

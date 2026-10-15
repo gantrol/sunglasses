@@ -1,0 +1,34 @@
+:root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #252621; background: #f5f4ef; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1080px; padding: 24px; margin: auto; }
+header, .controls, .transport, .image-labels, footer { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+header, .image-labels, footer { justify-content: space-between; }
+h1 { font-size: 1.4rem; margin: 0 0 16px; font-weight: 600; }
+label { display: flex; align-items: center; gap: 10px; }
+.controls { margin: 6px 0 18px; }
+button, select { font: inherit; color: inherit; background: #fff; border: 1px solid #898b80; border-radius: 3px; padding: 5px 10px; min-height: 38px; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .5; }
+:focus-visible { outline: 3px solid #555f2c; outline-offset: 3px; }
+.image-labels { margin-bottom: 6px; font-size: .88rem; }
+#stage { position: relative; background: #222; cursor: ew-resize; touch-action: pan-y; }
+canvas { display: block; width: 100%; height: auto; }
+#divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; transform: translateX(-1px); background: white; border-right: 1px solid black; pointer-events: none; }
+#divider::after { content: "↔"; position: absolute; left: -15px; top: calc(50% - 16px); width: 30px; height: 32px; text-align: center; color: #222; background: white; border: 1px solid #333; border-radius: 3px; }
+.slider { display: grid; grid-template-columns: 5em 1fr; margin-top: 14px; }
+input[type="range"] { width: 100%; margin: 0; accent-color: #53612d; min-height: 24px; }
+.transport { margin-top: 16px; gap: 8px; }
+output { font-variant-numeric: tabular-nums; }
+#status { margin-left: auto; font-size: .88rem; }
+.table-wrap { overflow-x: auto; margin-top: 24px; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+caption { text-align: left; margin-bottom: 8px; color: #5b5d53; font-size: .88rem; }
+td, th { text-align: right; padding: 6px 0 6px 16px; border-bottom: 1px solid #d5d5cc; }
+th:first-child { text-align: left; padding-left: 0; font-weight: 500; }
+footer { margin-top: 16px; font-size: .8rem; color: #55574e; }
+#source { font-size: .88rem; margin: 0 0 12px; }
+#source a { color: inherit; text-underline-offset: 3px; }
+#source-range { margin-left: 12px; }
+@media (max-width: 600px) { main { padding: 14px; } .controls { align-items: stretch; flex-direction: column; } .controls label { justify-content: space-between; } select { max-width: 75%; } }
+@media (forced-colors: active) { #divider, #divider::after { background: Canvas; border-color: CanvasText; color: CanvasText; } }

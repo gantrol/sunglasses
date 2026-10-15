@@ -1,0 +1,5 @@
+#pragma once
+// Apple kernel data, pinned 6e9604d. MIT notice is distributed in
+// sunglasses/data/APPLE_VIDEO_FLASHING_REDUCTION_NOTICE.md.
+inline constexpr char appleVfmSource[]=R"VFM_SHADER(@APPLE_VFM_SOURCE@)VFM_SHADER";
+inline constexpr char appleVfmKernelData[]=R"VFM_KERNEL(@APPLE_VFM_KERNELS@)VFM_KERNEL";

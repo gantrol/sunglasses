@@ -1,0 +1,234 @@
+{
+  "schema": 1,
+  "kind": "synthetic-offline-readme-demos",
+  "scope": "CPU references only; no live capture, presentation timing or game compatibility evidence",
+  "numpy": "2.3.3",
+  "pillow": "11.3.0",
+  "input_hash_format": "SHA-256 after CRLF-to-LF normalization of text sources",
+  "inputs": {
+    "scripts/generate_readme_demos.py": "46e36d9e9ec684579ebc6695ee20f04b2085167cc8fcfb7b26ad90aa3111d31a",
+    "shaders/screen.hlsl": "e48dd7441da0908ba28938f7b3d4a11565822cc4a770c250e62ca69a509a7241",
+    "sunglasses/demo_filter.py": "4dbbc3fec6fab4d80ebcc2f5d86b0b3ba1a31d109be09735c5615c0d7f56ca11",
+    "sunglasses/apple_vfm_screen.py": "48792cd60c1195f037758dbf3a1804aad2044d4e7d7ad897f284e534f9bf11e7",
+    "sunglasses/apple_vfm.py": "9ed35a248780efc27bdb731050399e960eb3547b94560e01607c9366c06c015c",
+    "sunglasses/color.py": "f676ad12e843351ec5c707639040265b53bd5ae8c9ef26bb046d6af976e0c9db",
+    "sunglasses/i18n.py": "cf3bf7d60f4bd0497da0ccd0d0aa421e73113109005d2a070b0a2c69391ac535",
+    "sunglasses/locales/en.json": "c7580989f9ca58f500fd55392e057f749ccb1ededb6c02d6c4713e89eab475ee",
+    "sunglasses/locales/zh-CN.json": "9d8eab4477e5259cb45884bf7c142edfb43f619af97e43cfee6ce56e9cd11cef",
+    "sunglasses/data/apple_ufm_kernels_6e9604d.txt": "209bc2e47a8a8dcaab6172787dc2721efe38a6b5d9d49fdeecd5938100a8dc79"
+  },
+  "clips": [
+    {
+      "file": "single-burst.gif",
+      "sha256": "844e7097f25e50e00fb91e7b0817694f97f5e19a1e92eef9676a62349d071a98",
+      "bytes": 1904519,
+      "width": 600,
+      "height": 494,
+      "algorithm": "screen_burst_reference",
+      "strength": 0.5,
+      "sample_hz": 60,
+      "export_hz": 20,
+      "duration_seconds": 6,
+      "flash_hz": null,
+      "flash_interval_seconds": [
+        1.5,
+        1.6
+      ],
+      "filtered_frames": 6,
+      "max_reference_control": 1.0,
+      "input_rgb_sha256": "2de4c16d81e544facee3f194c6a215f5641c10f18d190f37dd3626bff03696a0",
+      "output_rgb_sha256": "42f63985a1850ba8c133e379f410ab1756fdeee6b4bc72e6b723902f4e5d2f28",
+      "comparisons": [
+        {
+          "algorithm": "original",
+          "label": "Original",
+          "rgb_sha256": "2de4c16d81e544facee3f194c6a215f5641c10f18d190f37dd3626bff03696a0",
+          "filtered_frames": 0,
+          "first_changed_seconds": null,
+          "max_reference_control": 0.0,
+          "bright_phase_mean_y_range": [
+            0.3807043927104965,
+            0.3807043927104965
+          ],
+          "bright_phase_peak_y_range": [
+            1.0,
+            1.0
+          ],
+          "dark_phase_mean_y_range": [
+            0.044677343771035,
+            0.044677343771035
+          ]
+        },
+        {
+          "algorithm": "screen_burst_reference",
+          "label": "Reduce single flashes \u00b7 50%",
+          "rgb_sha256": "42f63985a1850ba8c133e379f410ab1756fdeee6b4bc72e6b723902f4e5d2f28",
+          "filtered_frames": 6,
+          "first_changed_seconds": 1.5,
+          "max_reference_control": 1.0,
+          "bright_phase_mean_y_range": [
+            0.30230086774052795,
+            0.30793855701316925
+          ],
+          "bright_phase_peak_y_range": [
+            0.7835377915261935,
+            0.799102738014409
+          ],
+          "dark_phase_mean_y_range": [
+            0.044677343771035,
+            0.044677343771035
+          ]
+        }
+      ],
+      "original_video": {
+        "visibility": "fully_covered_in_comparison",
+        "cover_xywh": [
+          6,
+          38,
+          288,
+          162
+        ],
+        "attachment": {
+          "file": "original-single-burst.gif",
+          "sha256": "437411b48639c37ae6df3283685b46c3edad0f743e042a5df86f0662d9513388",
+          "bytes": 7473,
+          "width": 288,
+          "height": 162
+        }
+      },
+      "luminance_metrics": {
+        "space": "display-sRGB relative linear Y",
+        "range": [
+          0,
+          1
+        ],
+        "bars": [
+          "frame_mean",
+          "frame_peak"
+        ],
+        "chart": "frame_peak",
+        "sample_hz": 60,
+        "smoothing": false,
+        "includes_layout": false,
+        "samples_f64le_sha256": "b4ee57333c2a58fc71b733e73de012cf1397775b56cbf77b1184e49b334544d1"
+      },
+      "verification": "Every decoded comparison and original export tick matches its rendered frame; original-video cover is constant"
+    },
+    {
+      "file": "repeated-flashes.gif",
+      "sha256": "874a3f673bbbf0a000ffa6f3fad1ed4a8c57c94457f7301a71b4a3dc19ae7082",
+      "bytes": 2772524,
+      "width": 900,
+      "height": 494,
+      "algorithm": "apple_matlab_vfm_60hz_v1",
+      "strength": 0.5,
+      "sample_hz": 60,
+      "export_hz": 20,
+      "duration_seconds": 6,
+      "flash_hz": 5,
+      "flash_interval_seconds": [
+        1,
+        4
+      ],
+      "filtered_frames": 285,
+      "max_reference_control": 0.9999999999997865,
+      "input_rgb_sha256": "21ad810c11cfdf1df02854bca7a591c9371136c5f184362658f48c2922e49084",
+      "output_rgb_sha256": "7d609fcfddd2fcea385593bd805698537ae127ce7a83a03d560a5d340e106018",
+      "comparisons": [
+        {
+          "algorithm": "original",
+          "label": "Original",
+          "rgb_sha256": "21ad810c11cfdf1df02854bca7a591c9371136c5f184362658f48c2922e49084",
+          "filtered_frames": 0,
+          "first_changed_seconds": null,
+          "max_reference_control": 0.0,
+          "bright_phase_mean_y_range": [
+            0.3807043927104965,
+            0.3807043927104965
+          ],
+          "bright_phase_peak_y_range": [
+            1.0,
+            1.0
+          ],
+          "dark_phase_mean_y_range": [
+            0.044677343771035,
+            0.044677343771035
+          ]
+        },
+        {
+          "algorithm": "screen_burst_reference",
+          "label": "Reduce single flashes \u00b7 50%",
+          "rgb_sha256": "869d2e714a9c7c48f60fb793c09861eab1b342dc5feedd79767fefbcc028353c",
+          "filtered_frames": 90,
+          "first_changed_seconds": 1.0,
+          "max_reference_control": 1.0,
+          "bright_phase_mean_y_range": [
+            0.30230086774052795,
+            0.30793855701316925
+          ],
+          "bright_phase_peak_y_range": [
+            0.7835377915261935,
+            0.799102738014409
+          ],
+          "dark_phase_mean_y_range": [
+            0.044677343771035,
+            0.044677343771035
+          ]
+        },
+        {
+          "algorithm": "apple_matlab_vfm_60hz_v1",
+          "label": "Reduce repeated flashes \u00b7 50%",
+          "rgb_sha256": "7d609fcfddd2fcea385593bd805698537ae127ce7a83a03d560a5d340e106018",
+          "filtered_frames": 285,
+          "first_changed_seconds": 1.25,
+          "max_reference_control": 0.9999999999997865,
+          "bright_phase_mean_y_range": [
+            0.11665437547655286,
+            0.3807043927104965
+          ],
+          "bright_phase_peak_y_range": [
+            0.26635560480286247,
+            1.0
+          ],
+          "dark_phase_mean_y_range": [
+            0.037921847425147,
+            0.06567614836322117
+          ]
+        }
+      ],
+      "original_video": {
+        "visibility": "fully_covered_in_comparison",
+        "cover_xywh": [
+          6,
+          38,
+          288,
+          162
+        ],
+        "attachment": {
+          "file": "original-repeated-flashes.gif",
+          "sha256": "336f99dd8b5f4c36647e0ec24e180f215e667629fea46ecba6fcf4e98aecae80",
+          "bytes": 76913,
+          "width": 288,
+          "height": 162
+        }
+      },
+      "luminance_metrics": {
+        "space": "display-sRGB relative linear Y",
+        "range": [
+          0,
+          1
+        ],
+        "bars": [
+          "frame_mean",
+          "frame_peak"
+        ],
+        "chart": "frame_peak",
+        "sample_hz": 60,
+        "smoothing": false,
+        "includes_layout": false,
+        "samples_f64le_sha256": "ba7132662e73058651d69d944ac5bab17eba09f2335bcbb8a877d90f030742d3"
+      },
+      "verification": "Every decoded comparison and original export tick matches its rendered frame; original-video cover is constant"
+    }
+  ]
+}

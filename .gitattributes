@@ -1,0 +1,3 @@
+# Preserve the exact bytes of resources with pinned integrity hashes.
+/sunglasses/data/apple_ufm_kernels_6e9604d.txt -text
+/shaders/screen.hlsl -text whitespace=cr-at-eol

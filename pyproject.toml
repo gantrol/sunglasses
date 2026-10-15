@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sunglasses-lab"
+version = "0.1.0.dev0"
+description = "Offline SDR highlight-compression research for Sunglasses"
+requires-python = ">=3.11"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.26,<3", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+video-demo = ["matplotlib>=3.8,<4"]
+
+[project.scripts]
+sunglasses = "sunglasses.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sunglasses*"]
+
+[tool.setuptools.package-data]
+sunglasses = ["locales/*.json", "comparison_ui/*.html", "comparison_ui/*.css", "comparison_ui/*.js",
+               "data/*.txt", "data/*.md"]
+
+[dependency-groups]
+dev = ["ruff>=0.14,<1", "ty>=0.0.1,<1"]
+build = [
+    "setuptools==82.0.1",
+    "wheel==0.47.0",
+    "numpy==2.3.3",
+    "Pillow==11.3.0",
+    "pyinstaller==6.22.3",
+    "pyinstaller-hooks-contrib==2026.8",
+    "altgraph==0.17.5",
+    "packaging==25.0",
+    "pefile==2024.8.26",
+    "pywin32-ctypes==0.2.3; sys_platform == 'win32'",
+]
+
+[tool.uv]
+required-version = ">=0.11.18,<0.12"
+
+[tool.ruff]
+target-version = "py311"
+extend-exclude = ["docs/records", "build", "dist", "*trash*", "*Trash*"]
+
+[tool.ruff.lint]
+# Start with correctness checks; avoid a repository-wide formatting migration.
+select = ["E9", "F63", "F7", "F82"]
+
+[tool.ty.environment]
+python-version = "3.12"
+extra-paths = ["scripts"]
+
+[tool.ty.src]
+include = ["scripts/ci.py", "scripts/dev.py", "scripts/release_support.py"]

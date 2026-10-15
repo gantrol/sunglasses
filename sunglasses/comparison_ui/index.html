@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title></title>
+  <style>/* STYLE */</style>
+</head>
+<body>
+<main>
+  <header><h1 data-text="title"></h1><label><span data-text="language"></span>
+    <select id="language"><option value="zh-CN" data-text="chinese"></option><option value="en" data-text="english"></option></select>
+  </label></header>
+  <div class="controls">
+    <label><span data-text="case"></span><select id="case"></select></label>
+    <label><span data-text="method"></span><select id="method"></select></label>
+  </div>
+  <p id="source" hidden><a id="source-link" target="_blank" rel="noopener noreferrer"></a><span id="source-range"></span></p>
+  <div class="image-labels"><span data-text="original"></span><span id="right-label"></span></div>
+  <div id="stage"><canvas id="picture" role="img"></canvas><div id="divider" aria-hidden="true"></div></div>
+  <label class="slider"><span data-text="split"></span><input id="split" type="range" min="0" max="1000" value="500"></label>
+  <label class="slider"><span data-text="time"></span><input id="time" type="range" min="0" value="0" step="1"></label>
+  <div class="transport">
+    <button id="play" type="button"></button><button id="previous" type="button" data-text="previous"></button>
+    <button id="next" type="button" data-text="next"></button><button id="keyframe" type="button" data-text="keyframe"></button>
+    <output id="position"></output><span id="status" role="status" aria-live="polite"></span>
+  </div>
+  <div class="table-wrap"><table>
+    <caption data-text="metrics"></caption>
+    <thead><tr><th scope="col" data-text="metric"></th><th scope="col" data-text="original"></th><th scope="col" id="metric-method"></th></tr></thead>
+    <tbody>
+      <tr><th scope="row" data-text="peak"></th><td id="source-peak"></td><td id="result-peak"></td></tr>
+      <tr><th scope="row" data-text="delta"></th><td id="source-delta"></td><td id="result-delta"></td></tr>
+      <tr><th scope="row" data-text="dark"></th><td id="source-dark"></td><td id="result-dark"></td></tr>
+    </tbody>
+  </table></div>
+  <footer><span id="amount"></span><span id="scope" data-text="scope"></span></footer>
+</main>
+<video id="video" muted playsinline preload="metadata" hidden></video>
+<script id="data" type="application/json">/* DATA */</script>
+<script>/* SCRIPT */</script>
+</body>
+</html>

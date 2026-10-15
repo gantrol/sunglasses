@@ -1,0 +1,2 @@
+#pragma once
+inline constexpr char automaticSource[] = R"SG_SHADER(@AUTOMATIC_SOURCE@)SG_SHADER";
